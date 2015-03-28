@@ -12,6 +12,7 @@ http {
     server {
         listen <%= ENV["PORT"] %>;
         server_name _;
+        resolver 8.8.8.8;
 
         location ~ "^/(.*)/(.*)" {
           proxy_pass http://$1/$2;
